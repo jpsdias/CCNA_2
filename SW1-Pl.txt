@@ -63,77 +63,92 @@ interface FastEthernet0/1
  switchport trunk native vlan 7
  switchport trunk allowed vlan 5-6,30,50,60
  switchport mode trunk
+ no shutdown
 !
 interface FastEthernet0/2
  description Connection to PCC
  switchport access vlan 30
  switchport mode access
  switchport nonegotiate
+ no shutdown
 !
 interface FastEthernet0/3
  switchport access vlan 30
  switchport mode access
  switchport nonegotiate
+ no shutdown
 !
 interface FastEthernet0/4
  switchport access vlan 30
  switchport mode access
  switchport nonegotiate
+ no shutdown
 !
 interface FastEthernet0/5
  switchport access vlan 30
  switchport mode access
  switchport nonegotiate
+ no shutdown
 !
 interface FastEthernet0/6
  switchport access vlan 30
  switchport mode access
  switchport nonegotiate
+ no shutdown
 !
 interface FastEthernet0/7
  switchport access vlan 30
  switchport mode access
  switchport nonegotiate
+ no shutdown
 !
 interface FastEthernet0/8
  switchport access vlan 30
  switchport mode access
  switchport nonegotiate
+ no shutdown
 !
 interface FastEthernet0/9
  switchport access vlan 30
  switchport mode access
  switchport nonegotiate
+ no shutdown
 !
 interface FastEthernet0/10
  switchport access vlan 30
  switchport mode access
  switchport nonegotiate
+ no shutdown
 !
 interface FastEthernet0/11
  switchport access vlan 30
  switchport mode access
  switchport nonegotiate
+ no shutdown
 !
 interface FastEthernet0/12
  switchport access vlan 30
  switchport mode access
  switchport nonegotiate
+ no shutdown
 !
 interface FastEthernet0/13
  switchport access vlan 30
  switchport mode access
  switchport nonegotiate
+ no shutdown
 !
 interface FastEthernet0/14
  switchport access vlan 30
  switchport mode access
  switchport nonegotiate
+ no shutdown
 !
 interface FastEthernet0/15
  switchport access vlan 30
  switchport mode access
  switchport nonegotiate
+ no shutdown
 !
 interface FastEthernet0/16
  switchport access vlan 99
@@ -170,11 +185,13 @@ interface FastEthernet0/21
  switchport trunk native vlan 5
  switchport trunk allowed vlan 5,50,60
  switchport mode trunk
+ no shutdown
 !
 interface FastEthernet0/22
  switchport trunk native vlan 5
  switchport trunk allowed vlan 5,50,60
  switchport mode trunk
+ no shutdown
 !
 interface FastEthernet0/23
  switchport access vlan 99

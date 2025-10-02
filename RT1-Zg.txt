@@ -63,21 +63,18 @@ ip host WLC1-Zg 172.20.0.230
 interface GigabitEthernet0/0
  description Connection to MLS1-Zg
  ip address 172.20.0.157 255.255.255.252
- duplex auto
- speed auto
  ipv6 address 2001:A:0:8::1/64
+ no shutdown
 !
 interface GigabitEthernet0/1
  description Connection to MLS2-Zg
  ip address 172.20.0.153 255.255.255.252
- duplex auto
- speed auto
  ipv6 address 2001:A:0:9::1/64
+ no shutdown
 !
 interface GigabitEthernet0/2
  no ip address
- duplex auto
- speed auto
+ no shutdown
 !
 interface GigabitEthernet0/2.102
  description Connection to RT1-Pl

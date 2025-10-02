@@ -52,16 +52,19 @@ interface FastEthernet0/1
  description Trunk Zabreg
  switchport trunk allowed vlan 102-103
  switchport mode trunk
+ no shutdown
 !
 interface FastEthernet0/2
  description Trunk Pula
  switchport trunk allowed vlan 102,203
  switchport mode trunk
+ no shutdown
 !
 interface FastEthernet0/3
  description Trunk Split
  switchport trunk allowed vlan 103,203
  switchport mode trunk
+ no shutdown
 !
 interface FastEthernet0/4
  switchport access vlan 99
