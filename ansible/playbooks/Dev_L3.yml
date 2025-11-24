@@ -55,7 +55,7 @@
       loop: "{{ subinterfaces }}"
       when: 
         - subinterfaces is defined
-        - "'{{ item.parent }}.{{ item.vlan }}' not in (management_interface | default([]))"
+        - item.parent ~ '.' ~ item.vlan not in (management_interface | default([]))
       tags: subinterfaces
 
     - name: Configure Subinterfaces Encapsulation
@@ -65,10 +65,10 @@
       loop: "{{ subinterfaces }}"
       when: 
         - subinterfaces is defined
-        - "'{{ item.parent }}.{{ item.vlan }}' not in (management_interface | default([]))"
+        - item.parent ~ '.' ~ item.vlan not in (management_interface | default([]))
       tags: subinterfaces
 
-    - name: Configure Subinterface IPs
+    - name: Configure Subinterfaces IPs
       cisco.ios.ios_l3_interfaces:
         config:
           - name: "{{ item.parent }}.{{ item.vlan }}"
@@ -76,12 +76,12 @@
               - address: "{{ item.ipv4.address | default(omit) }}/{{ item.ipv4.prefix | default(omit) }}"
             ipv6: 
               - address: "{{ item.ipv6.address | default(omit) }}"
-                link_local: "{{ item.ipv6.link_local | defined(omit) }}"
+                link_local: "{{ item.ipv6.link_local if item.ipv6.link_local is defined else omit }}"
         state: merged
       loop: "{{ subinterfaces }}"
       when: 
         - subinterfaces is defined
-        - "'{{ item.parent }}.{{ item.vlan }}' not in (management_interface | default([]))"
+        - item.parent ~ '.' ~ item.vlan not in (management_interface | default([]))
       tags: subinterfaces
 
     - name: Configure DHCP excluded addresses

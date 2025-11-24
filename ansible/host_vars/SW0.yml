@@ -36,7 +36,8 @@ svis:
       address: 10.0.0.13
       prefix: 29
     ipv6:
-      link_local: "FE80::6:1"
+      address: "FE80::6:1"
+      link_local: True
 
 unused_interfaces_real:
   - "{{ sInt['Fa0/5'] }}"

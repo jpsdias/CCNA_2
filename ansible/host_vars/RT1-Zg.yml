@@ -26,7 +26,8 @@ subinterfaces:
       address: 10.0.0.1
       prefix: 30
     ipv6:
-      link_local: "FE80::102:1"
+      address: "FE80::102:1"
+      link_local: True
   
   - parent: "{{ rInt['Gig0/2'] }}"
     vlan: 103
@@ -35,7 +36,8 @@ subinterfaces:
       address: 10.0.0.5
       prefix: 30
     ipv6:
-      link_local: "FE80::103:1"
+      address: "FE80::103:1"
+      link_local: True
 
   - parent: "{{ rInt['Gig0/2'] }}"
     vlan: 6
@@ -44,7 +46,8 @@ subinterfaces:
       address: 10.0.0.18
       prefix: 29
     ipv6:
-      link_local: "FE80::6:2"
+      address: "FE80::6:2"
+      link_local: True
 
 static_routes:
   # Default routes

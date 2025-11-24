@@ -11,8 +11,8 @@
       cisco.ios.ios_vlans:
         config:
           - name: "{{ item.name }}"
-            state: Active
-            shutdown: Disabled
+            state: active
+            shutdown: disabled
             vlan_id: "{{ item.id }}"
         state: merged
       loop: "{{ vlans }}"
@@ -37,7 +37,8 @@
             ipv4:
               - address: "{{ item.ipv4.address }}/{{ item.ipv4.prefix }}"
             ipv6: 
-              - address: "{{ item.ipv6.address }}"
+              - address: "{{ item.ipv6.address | default(omit) }}"
+                link_local: "{{ item.ipv6.link_local if item.ipv6.link_local is defined else omit }}"
         state: merged
       loop: "{{ svis }}"
       when: svis is defined
@@ -109,7 +110,8 @@
             ipv4:
               - address: "{{ item.ipv4.address }}/{{ item.ipv4.prefix }}"
             ipv6:
-              - address: "{{ item.ipv6.address }}"
+              - address: "{{ item.ipv6.address | default(omit) }}"
+                link_local: "{{ item.ipv6.link_local if item.ipv6.link_local is defined else omit }}"
         state: merged
       loop: "{{ l3_interfaces }}"
       when:

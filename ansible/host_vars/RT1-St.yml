@@ -82,7 +82,8 @@ subinterfaces:
       address: 10.0.0.6
       prefix: 30
     ipv6:
-      link_local: "FE80::103:2"
+      address: "FE80::103:2"
+      link_local: True
   
   - parent: "{{ rInt['Gig0/2'] }}"
     vlan: 203
@@ -91,7 +92,8 @@ subinterfaces:
       address: 10.0.0.10
       prefix: 30
     ipv6:
-      link_local: "FE80::203:2"
+      address: "FE80::203:2"
+      link_local: True
 
   - parent: "{{ rInt['Gig0/2'] }}"
     vlan: 6
@@ -100,7 +102,8 @@ subinterfaces:
       address: 10.0.0.20
       prefix: 29
     ipv6:
-      link_local: "FE80::6:2"
+      address: "FE80::6:2"
+      link_local: True
 
 dhcp_pools:
   - name: Staff
